@@ -11,12 +11,27 @@ void draw() {
   fill(0);
   textSize(20);
   text("Y", 335, 180);
+  if (keyPressed) {
+    if (key == 'y') {
+      println("YYYYYYYY");
+    }
+  }
   text("U", 570, 180);
+  if (keyPressed) {
+    if (key == 'u') {
+      println("UUUUUUUU");
+    }
+  }
   text("T", 985, 160);
+  if (keyPressed) {
+    if (key == 't') {
+      println("TTTTTTTT");
+    }
+  }
   text("R", 1275, 173);
   if (keyPressed) {
-    if (key == "Y") {
-      println(it works);
+    if (key == 'r') {
+      println("RRRRRRRRRRR");
     }
   }
 }
