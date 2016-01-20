@@ -13,7 +13,7 @@ void draw() {
   text("Y", 335, 180);
   if (keyPressed) {
     if (key == 'y') {
-      println("YYYYYYYY");
+      println("YYYYYYYY"); //All of the println's were made just for testing purposes
     }
   }
   text("U", 570, 180);
