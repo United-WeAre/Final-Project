@@ -1,7 +1,8 @@
 int headSize = 50;
 int shoeW = 30;
 int shoeH = 15;
-float theta = 0;
+float theta1 = 0;
+float theta2 = 0;
 float forwardKick = radians(2);
 float backKick = -radians(.75);
 float kick = forwardKick;
@@ -17,7 +18,7 @@ float player2move = 6;
 
 void setup() {
   size(800, 600);        //creates size of canvas
-  rectMode(CENTER);      //
+  rectMode(CENTER);      
 }
 
 void draw() {
@@ -28,27 +29,27 @@ void draw() {
   translate(head1x, head1y);
   fill(255);
   ellipse(0, 0, headSize, headSize);
-  rotate(theta);
+  rotate(theta1);
   rect(0, 0 + headSize/2, shoeW, shoeH);
-  theta += kick;
-  if (theta > PI/2) {
+theta1 += kick;
+  if (theta1 > PI/2) {
     kick = backKick;
   }
-  if (theta < 0) {
-    kick = forwardKick;
+  if (theta1 < 0) {
+    kick = forwardKick; 
   }
   popMatrix();
   pushMatrix();
   translate(head2x, head2y);
   fill(255);
   ellipse(0, 0, headSize, headSize);
-  rotate(theta);
+  rotate(-theta2);
   rect(0, 0 + headSize/2, shoeW, shoeH);
-  theta += kick2;
-  if (theta < PI/2) {
+  theta2 += kick2;
+  if (theta2 > PI/2) {
     kick2 = backKick2;
   }
-  if (theta < 0) {
+  if (theta2 < 0) {
     kick2 = forwardKick2;
   }
   popMatrix();
@@ -56,20 +57,16 @@ void draw() {
 
 
 void keyPressed() {
-  if (key == CODED) {
-    if (keyCode == 37) {
-      head1x -= player1move;
-    } else if (keyCode == 39) {
-      head1x += player1move;
-    }
+  if (keyCode == 37) {
+    head1x -= player1move;
+  } else if (keyCode == 39) {
+    head1x += player1move;
   }
-  if (key == CODED) {
-    if (key == 'a') {
-      head2x -= player1move;
-    } else if (key == 'b') {
-      head2x += player1move;
-    }
-    head1x = constrain(head1x, 50, width-50);
-    head2x = constrain(head2x, 50, width-50);
+  if (key == 'a') {
+    head2x -= player1move;
+  } else if (key == 'd') {
+    head2x += player1move;
   }
+  head1x = constrain(head1x, 50, width-50);
+  head2x = constrain(head2x, 50, width-50);
 }
