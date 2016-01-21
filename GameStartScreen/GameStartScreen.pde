@@ -18,28 +18,42 @@ void draw() {
     text("Y", 335, 180);
     if (keyPressed) {
       if (key == 'y') {
-        println("YYYYYYYY");
+        gameMode = 1;
       }
     }
     text("U", 570, 180);
     if (keyPressed) {
       if (key == 'u') {
-        println("UUUUUUUU");
+        gameMode = 2;
       }
     }
     text("T", 985, 160);
     if (keyPressed) {
       if (key == 't') {
-        println("TTTTTTTT");
+        gameMode = 3;
       }
     }
     text("R", 1275, 173);
     if (keyPressed) {
       if (key == 'r') {
-        println("RRRRRRRRRRR");
+        gameMode = 4;
       }
     }
   } else if (gameMode == 1) {
     background(0);
+    fill(255, 255, 255);
+    text("DJ Khaled", width/2, height/2);
+  } else if (gameMode == 2) {
+    background(0);
+    fill(255, 255, 255);
+    text("Kanye", width/2, height/2);
+  } else if (gameMode == 3) {
+    background(0);
+    fill(255, 255, 255);
+    text("50 Cent", width/2, height/2);
+  } else if (gameMode == 4) {
+    background(0);
+    fill(255, 255, 255);
+    text("Drake", width/2, height/2);
   }
 }
