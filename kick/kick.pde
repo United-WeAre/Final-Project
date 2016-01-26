@@ -23,6 +23,7 @@ void setup() {
 }
 
 void draw() {
+  println("kick1: " + kickactivate1);
   background(150);
   fill(255, 0, 0);
   rect(width/2, height/2, width, height);
@@ -30,16 +31,17 @@ void draw() {
   translate(head1x, head1y);
   fill(255);
   ellipse(0, 0, headSize, headSize);
-  //rotate(theta1);
-  rect(0, 0 + headSize/2, shoeW, shoeH);
-  if (kickactivate1=true) {
+
+  if (kickactivate1==true) {
     rotate(theta1);
     theta1 += kick;
   }
-  if (kickactivate1=true && theta1 > PI/2) {
+  //rotate(theta1);
+  rect(0, 0 + headSize/2, shoeW, shoeH);
+  if (kickactivate1==true && theta1 > PI/2) {
     kick = backKick;
   }
-  if (kickactivate1=true && theta1 < 0) {
+  if (kickactivate1==true && theta1 < 0) {
     kick = forwardKick;
   }
   popMatrix();
@@ -47,13 +49,21 @@ void draw() {
   translate(head2x, head2y);
   fill(255);
   ellipse(0, 0, headSize, headSize);
-  rotate(-theta2);
+
+  if (kickactivate2==true) {
+    rotate(-theta2);
+    theta2 += kick2;
+  }
+  //rotate(theta1);
+
   rect(0, 0 + headSize/2, shoeW, shoeH);
-  theta2 += kick2;
-  if (theta2 > PI/2) {
+  rotate(-theta2);
+
+
+  if (kickactivate2==true && theta2 > PI/2) {
     kick2 = backKick2;
   }
-  if (theta2 < 0) {
+  if (kickactivate2==true && theta2 < 0) {
     kick2 = forwardKick2;
   }
   popMatrix();
@@ -72,8 +82,24 @@ void keyPressed() {
     head2x += player1move;
   }
   if (keyCode == 32) {
+    println("activated kick1 in frame " + frameCount);
     kickactivate1=true;
   }
+  if (key == 'l') {
+    println("activated kick1 in frame " + frameCount);
+    kickactivate2=true;
+  }
+
   head1x = constrain(head1x, 50, width-50);
   head2x = constrain(head2x, 50, width-50);
+}
+
+void keyReleased () { 
+  if (keyCode == 32) {
+    kickactivate1=false;
+  }
+   if (key == 'l') {
+   
+    kickactivate2=false;
+  }
 }
