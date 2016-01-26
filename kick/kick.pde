@@ -17,12 +17,17 @@ float head2x = 150;
 float player2move = 6;
 boolean kickactivate1 = false;
 boolean kickactivate2 = false;
+PImage Ball2 = loadImage("Ball2.jpg");
+Ball b = new Ball();
 void setup() {
   size(800, 600);        //creates size of canvas
   rectMode(CENTER);
+  Ball2 = loadImage("Ball2.jpg");
 }
 
 void draw() {
+  b.display();
+  b.move();
   println("kick1: " + kickactivate1);
   background(150);
   fill(255, 0, 0);
@@ -98,8 +103,8 @@ void keyReleased () {
   if (keyCode == 32) {
     kickactivate1=false;
   }
-   if (key == 'l') {
-   
+  if (key == 'l') {
+
     kickactivate2=false;
   }
 }
