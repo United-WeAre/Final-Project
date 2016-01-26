@@ -2,7 +2,7 @@
 int gameMode;
 
 void setup() {
-  size(1600, 800);  //set canvas size
+  size(1280, 720);  //set canvas size
   gameMode = 0;
   //WorldCupScreen = loadImage("WorldCupScreen.jpg");
 }
