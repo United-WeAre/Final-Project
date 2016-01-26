@@ -17,15 +17,17 @@ float head2x = 150;
 float player2move = 6;
 boolean kickactivate1 = false;
 boolean kickactivate2 = false;
+PImage miamiArena;
+
 void setup() {
-  size(800, 600);        //creates size of canvas
+  size(1600, 800);
   rectMode(CENTER);
+  miamiArena = loadImage("miamiArena.jpg");
 }
 
 void draw() {
+  background(miamiArena);
   println("kick1: " + kickactivate1);
-  background(150);
-  fill(255, 0, 0);
   rect(width/2, height/2, width, height);
   pushMatrix();
   translate(head1x, head1y);
@@ -81,7 +83,7 @@ void keyPressed() {
     println("activated kick1 in frame " + frameCount);
     kickactivate2=true;
   }
-  if key 
+
   head1x = constrain(head1x, 50, width-50);
   head2x = constrain(head2x, 50, width-50);
 }
