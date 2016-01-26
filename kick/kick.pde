@@ -9,12 +9,14 @@ float kick = forwardKick;
 float forwardKick2 = radians(8);
 float backKick2 = -radians(6);
 float kick2 = forwardKick2;
-float head1y = 500;
-float head1x = 650;
-float player1move = 6;
-float head2y = 500;
+float head1y = 600;
+float head1x = 1200;
+float player1move = 10;
+float head2y = 600;
 float head2x = 150;
-float player2move = 6;
+float player2move = 10;
+float player1jump = 30;
+float player2jump = 30;
 boolean kickactivate1 = false;
 boolean kickactivate2 = false;
 PImage miamiArena;
@@ -26,6 +28,7 @@ void setup() {
 }
 
 void draw() {
+  miamiArena.resize(width, height);
   background(miamiArena);
   println("kick1: " + kickactivate1);
   rect(width/2, height/2, width, height);
@@ -83,9 +86,16 @@ void keyPressed() {
     println("activated kick1 in frame " + frameCount);
     kickactivate2=true;
   }
-
+  if (keyCode == UP) {
+    head1y -= player1jump;
+  }
+  if (key == 'w') {
+    head2y -= player2jump;
+  }
   head1x = constrain(head1x, 50, width-50);
   head2x = constrain(head2x, 50, width-50);
+  head1y = constrain(head1y, 530, 610);
+  head2y = constrain(head2y, 530, 610);
 }
 
 void keyReleased () { 
@@ -96,5 +106,11 @@ void keyReleased () {
   if (key == 'l') {
     kickactivate2=false;
     theta2=0;
+  }
+  if (keyCode == UP) {
+    head1y = 600;
+  }
+  if (key == 'w') {
+    head2y = 600;
   }
 }
