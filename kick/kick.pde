@@ -10,10 +10,10 @@ float forwardKick2 = radians(8);
 float backKick2 = -radians(6);
 float kick2 = forwardKick2;
 float head1y = 600;
-float head1x = 1200;
+float head1x = 1000;
 float player1move = 10;
 float head2y = 600;
-float head2x = 150;
+float head2x = 200;
 float player2move = 10;
 float player1jump = 30;
 float player2jump = 30;
@@ -23,10 +23,12 @@ PImage miamiArena;
 Ball b;
 
 void setup() {
-  size(1600, 800);
+  size(1280, 720);
   rectMode(CENTER);
   b= new Ball();
   miamiArena = loadImage("miamiArena.jpg");
+    //miamiArena.resize(width, height);
+
 }
 
 void draw() {
@@ -96,10 +98,10 @@ void keyPressed() {
   if (key == 'w') {
     head2y -= player2jump;
   }
-  head1x = constrain(head1x, 50, width-50);
-  head2x = constrain(head2x, 50, width-50);
-  head1y = constrain(head1y, 530, 610);
-  head2y = constrain(head2y, 530, 610);
+  head1x = constrain(head1x, 220, width-220);
+  head2x = constrain(head2x, 220, width-220);
+  head1y = constrain(head1y, 500, 610);
+  head2y = constrain(head2y, 500, 610);
 }
 
 void keyReleased () { 
