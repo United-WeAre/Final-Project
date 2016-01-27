@@ -20,16 +20,20 @@ float player2jump = 30;
 boolean kickactivate1 = false;
 boolean kickactivate2 = false;
 PImage miamiArena;
+Ball b;
 
 void setup() {
   size(1600, 800);
   rectMode(CENTER);
+  b= new Ball();
   miamiArena = loadImage("miamiArena.jpg");
 }
 
 void draw() {
   miamiArena.resize(width, height);
   background(miamiArena);
+  b.display();
+  b.move();
   println("kick1: " + kickactivate1);
   
   pushMatrix();
