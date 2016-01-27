@@ -9,6 +9,7 @@ class Ball {
   int scoreL;
   int scoreR;
 
+
   Ball() {
     x = width/2;
     y = height/2;
@@ -63,5 +64,16 @@ class Ball {
     //if (y + diam == 600 && x + diam == 200) {
     //  velX = -abs(velX);
     //}
+  }
+  void collision (float sx, float sy) {
+
+    if (dist(x, y, sx, sy) <=40) {
+      println("collide in frame " + frameCount);
+      velX += 1; 
+      velX=-velX;
+      velY +=1;
+      velY =- abs(velY);
+      
+    }
   }
 }

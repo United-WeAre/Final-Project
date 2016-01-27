@@ -22,15 +22,16 @@ boolean kickactivate1 = false;
 boolean kickactivate2 = false;
 PImage miamiArena;
 Ball b;
+feet f;
 
 void setup() {
   size(1280, 720);
   rectMode(CENTER);
-  
-  b= new Ball();
-  miamiArena = loadImage("miamiArena.jpg");
-    //miamiArena.resize(width, height);
 
+  b= new Ball();
+  f = new feet();
+  miamiArena = loadImage("miamiArena.jpg");
+  //miamiArena.resize(width, height);
 }
 
 void draw() {
@@ -38,8 +39,9 @@ void draw() {
   background(miamiArena);
   b.display();
   b.move();
-  println("kick1: " + kickactivate1);
-  
+
+  //println("kick1: " + kickactivate1);
+
   pushMatrix();
   translate(head1x, head1y);
   fill(255);
@@ -48,7 +50,8 @@ void draw() {
     rotate(theta1);
     theta1 += kick;
   }
-  rect(0, 0 + headSize/2, shoeW, shoeH);
+  f.display();
+  b.collision (head1x + f.x, head1y + f.y);
   if (kickactivate1==true && theta1 >= PI/2) {
     kick = backKick;
   }
@@ -64,7 +67,8 @@ void draw() {
     rotate(-theta2);
     theta2 += kick2;
   }
-  rect(0, 0 + headSize/2, shoeW, shoeH);
+  f.display();
+    b.collision (head2x + f.x, head2y + f.y);
   rotate(-theta2);
   if (kickactivate2==true && theta2 >= PI/2) {
     kick2 = backKick2;
