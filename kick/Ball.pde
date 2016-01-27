@@ -1,19 +1,17 @@
 class Ball {
   float x, y, velX, velY, diam, gravity;
-  PImage Ball2;
 
   Ball() {
     x = width/2;
     y = height/2;
-    diam = 80;
+    diam = 40;
     velX = random(-5, 5);
     velY = random(-5, 5);
     gravity = 1;
-    Ball2 = loadImage("Ball2.jpg");
   }
   void display() {
-    imageMode(CENTER);
-    image(Ball2, x, y);  //soccerball image inserted
+    fill(0,0,255);
+    ellipse(diam,diam,x,y);
   }
   void move() {
     x += velX;

@@ -4,7 +4,7 @@ PImage Ball2;
 
 void setup()
 {
-  size (1600, 800);
+  size (1280, 720);
   background (0);
   x = width/2;
   y = height/2;

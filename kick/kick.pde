@@ -18,12 +18,11 @@ float player2move = 6;
 boolean kickactivate1 = false;
 boolean kickactivate2 = false;
 //PImage Ball2 = loadImage("Ball2.jpg");
-Ball b;
+Ball b = new Ball();
 void setup() {
-  size(800, 600);        //creates size of canvas
+  size(1280, 720);        //creates size of canvas
   rectMode(CENTER);
   //Ball2 = loadImage("Ball2.jpg");
-  b = new Ball();
 }
 
 void draw() {
