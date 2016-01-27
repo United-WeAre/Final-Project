@@ -1,3 +1,4 @@
+//This is the class for the ball
 class Ball {
   float x;
   float y;
@@ -38,6 +39,7 @@ class Ball {
     if (y>=  height) {
       y = height - diam/2;
     }
+    //The following code controls the left and right player scores
     fill(255);
     textSize(75);
     text(scoreL, 470, 225);
@@ -48,5 +50,8 @@ class Ball {
     if (x + diam >= 1150) {
       scoreR = scoreR + 1;
     }
+    //if (y + diam == 600 && x + diam == 200) {
+    //  velX = -abs(velX);
+    //}
   }
 }
