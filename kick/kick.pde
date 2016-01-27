@@ -17,6 +17,7 @@ float head2x = 200;
 float player2move = 10;
 float player1jump = 30;
 float player2jump = 30;
+
 boolean kickactivate1 = false;
 boolean kickactivate2 = false;
 PImage miamiArena;
@@ -25,6 +26,7 @@ Ball b;
 void setup() {
   size(1280, 720);
   rectMode(CENTER);
+  
   b= new Ball();
   miamiArena = loadImage("miamiArena.jpg");
     //miamiArena.resize(width, height);
