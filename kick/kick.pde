@@ -31,7 +31,7 @@ void draw() {
   miamiArena.resize(width, height);
   background(miamiArena);
   println("kick1: " + kickactivate1);
-  rect(width/2, height/2, width, height);
+  
   pushMatrix();
   translate(head1x, head1y);
   fill(255);
