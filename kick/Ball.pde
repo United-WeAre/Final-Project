@@ -69,9 +69,9 @@ class Ball {
 
     if (dist(x, y, sx, sy) <=40) {
       println("collide in frame " + frameCount);
-      velX += 1; 
+      velX += random (1,4); 
       velX=-velX;
-      velY +=1;
+      velY += random (1,4); 
       velY =- abs(velY);
       
     }
