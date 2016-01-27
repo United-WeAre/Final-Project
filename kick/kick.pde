@@ -39,14 +39,14 @@ void draw() {
   pushMatrix();
   translate(head1x, head1y);
   fill(255);
-  ellipse(0, 0, headSize, headSize);
+  ellipse(0, 75, headSize, headSize);
 
   if (kickactivate1==true) {
     rotate(theta1);
     theta1 += kick;
   }
   //rotate(theta1);
-  rect(0, 0 + headSize/2, shoeW, shoeH);
+  rect(0, 75 + headSize/2, shoeW, shoeH);
   if (kickactivate1==true && theta1 > PI/2) {
     kick = backKick;
   }
@@ -57,7 +57,7 @@ void draw() {
   pushMatrix();
   translate(head2x, head2y);
   fill(255);
-  ellipse(0, 0, headSize, headSize);
+  ellipse(0, 75, headSize, headSize);
 
   if (kickactivate2==true) {
     rotate(-theta2);
@@ -65,7 +65,7 @@ void draw() {
   }
   //rotate(theta1);
 
-  rect(0, 0 + headSize/2, shoeW, shoeH);
+  rect(0, 75 + headSize/2, shoeW, shoeH);
   rotate(-theta2);
 
 

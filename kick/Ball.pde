@@ -28,10 +28,10 @@ class Ball {
     } else if (x - diam <= 0) {
       velX = abs(velX);     //if the ball hits the left wall, assign x velocity the positive version of itself
     }
-    if (y + diam/2 > height) {
+    if (y + diam/2 > height - 75) {
       velY = -abs(velY);
     }
-    if (y>= height) {
+    if (y>=  height) {
       y = height - diam/2;
     }
   }
