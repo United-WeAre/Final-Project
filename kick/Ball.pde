@@ -45,10 +45,20 @@ class Ball {
     text(scoreL, 470, 225);
     if (x + diam <= 200) {
       scoreL = scoreL + 1;
+      x = width/2;
+      y = height/2;
+      velX = random(-5, 5);
+      velY = random(-5, 5);
+      gravity = 1;
     }
     text(scoreR, 710, 225);
     if (x + diam >= 1150) {
       scoreR = scoreR + 1;
+      x = width/2;
+      y = height/2;
+      velX = random(-5, 5);
+      velY = random(-5, 5);
+      gravity = 1;
     }
     //if (y + diam == 600 && x + diam == 200) {
     //  velX = -abs(velX);
