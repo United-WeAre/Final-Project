@@ -37,48 +37,204 @@ void setup() {
 }
 
 void draw() {
-  miamiArena.resize(width, height);
-  background(miamiArena);
-  b.display();
-  b.move();
+  if (gameMode == 0) {
+    PImage WorldCupScreen;
+    WorldCupScreen = loadImage("Start Screen.jpg");
+    background(0);
+    image(WorldCupScreen, 0, 0);
+    if (keyPressed) {
+      if (key == 'y') {
+        gameMode = 1;
+      }
+    }
 
-  //println("kick1: " + kickactivate1);
+    if (keyPressed) {
+      if (key == 'u') {
+        gameMode = 2;
+      }
+    }
 
-  pushMatrix();
-  translate(head1x, head1y);
-  fill(255);
-  ellipse(0, 0, headSize, headSize);
-  if (kickactivate1==true) {
-    rotate(theta1);
-    theta1 += kick;
-  }
-  f.display();
-  b.collision (head1x + f.x, head1y + f.y);
-  if (kickactivate1==true && theta1 >= PI/2) {
-    kick = backKick;
-  }
-  if (kickactivate1==true && theta1 <= 0) {
-    kick = forwardKick;
-  }
-  popMatrix();
-  pushMatrix();
-  translate(head2x, head2y);
-  fill(255);
-  ellipse(0, 0, headSize, headSize);
-  if (kickactivate2==true) {
-    rotate(-theta2);
-    theta2 += kick2;
-  }
-  f.display();
+    if (keyPressed) {
+      if (key == 'r') {
+        gameMode = 3;
+      }
+    }
+
+    if (keyPressed) {
+      if (key == 't') {
+        gameMode = 4;
+      }
+    }
+  } else if (gameMode == 1) {
+    miamiArena.resize(width, height);
+    background(miamiArena);
+    b.display();
+    b.move();
+
+    //println("kick1: " + kickactivate1);
+
+    pushMatrix();
+    translate(head1x, head1y);
+    fill(255);
+    ellipse(0, 0, headSize, headSize);
+    if (kickactivate1==true) {
+      rotate(theta1);
+      theta1 += kick;
+    }
+    f.display();
+    b.collision (head1x + f.x, head1y + f.y);
+    if (kickactivate1==true && theta1 >= PI/2) {
+      kick = backKick;
+    }
+    if (kickactivate1==true && theta1 <= 0) {
+      kick = forwardKick;
+    }
+    popMatrix();
+    pushMatrix();
+    translate(head2x, head2y);
+    fill(255);
+    ellipse(0, 0, headSize, headSize);
+    if (kickactivate2==true) {
+      rotate(-theta2);
+      theta2 += kick2;
+    }
+    f.display();
     b.collision (head2x + f.x, head2y + f.y);
-  rotate(-theta2);
-  if (kickactivate2==true && theta2 >= PI/2) {
-    kick2 = backKick2;
+    rotate(-theta2);
+    if (kickactivate2==true && theta2 >= PI/2) {
+      kick2 = backKick2;
+    }
+    if (kickactivate2==true && theta2 <= 0) {
+      kick2 = forwardKick2;
+    }
+    popMatrix();
+  } else if (gameMode == 2) {
+    miamiArena.resize(width, height);
+    background(miamiArena);
+    b.display();
+    b.move();
+
+    //println("kick1: " + kickactivate1);
+
+    pushMatrix();
+    translate(head1x, head1y);
+    fill(255);
+    ellipse(0, 0, headSize, headSize);
+    if (kickactivate1==true) {
+      rotate(theta1);
+      theta1 += kick;
+    }
+    f.display();
+    b.collision (head1x + f.x, head1y + f.y);
+    if (kickactivate1==true && theta1 >= PI/2) {
+      kick = backKick;
+    }
+    if (kickactivate1==true && theta1 <= 0) {
+      kick = forwardKick;
+    }
+    popMatrix();
+    pushMatrix();
+    translate(head2x, head2y);
+    fill(255);
+    ellipse(0, 0, headSize, headSize);
+    if (kickactivate2==true) {
+      rotate(-theta2);
+      theta2 += kick2;
+    }
+    f.display();
+    b.collision (head2x + f.x, head2y + f.y);
+    rotate(-theta2);
+    if (kickactivate2==true && theta2 >= PI/2) {
+      kick2 = backKick2;
+    }
+    if (kickactivate2==true && theta2 <= 0) {
+      kick2 = forwardKick2;
+    }
+  } else if (gameMode == 3) {
+    miamiArena.resize(width, height);
+    background(miamiArena);
+    b.display();
+    b.move();
+
+    //println("kick1: " + kickactivate1);
+
+    pushMatrix();
+    translate(head1x, head1y);
+    fill(255);
+    ellipse(0, 0, headSize, headSize);
+    if (kickactivate1==true) {
+      rotate(theta1);
+      theta1 += kick;
+    }
+    f.display();
+    b.collision (head1x + f.x, head1y + f.y);
+    if (kickactivate1==true && theta1 >= PI/2) {
+      kick = backKick;
+    }
+    if (kickactivate1==true && theta1 <= 0) {
+      kick = forwardKick;
+    }
+    popMatrix();
+    pushMatrix();
+    translate(head2x, head2y);
+    fill(255);
+    ellipse(0, 0, headSize, headSize);
+    if (kickactivate2==true) {
+      rotate(-theta2);
+      theta2 += kick2;
+    }
+    f.display();
+    b.collision (head2x + f.x, head2y + f.y);
+    rotate(-theta2);
+    if (kickactivate2==true && theta2 >= PI/2) {
+      kick2 = backKick2;
+    }
+    if (kickactivate2==true && theta2 <= 0) {
+      kick2 = forwardKick2;
+    }
+  } else if (gameMode == 4) {
+    miamiArena.resize(width, height);
+    background(miamiArena);
+    b.display();
+    b.move();
+
+    //println("kick1: " + kickactivate1);
+
+    pushMatrix();
+    translate(head1x, head1y);
+    fill(255);
+    ellipse(0, 0, headSize, headSize);
+    if (kickactivate1==true) {
+      rotate(theta1);
+      theta1 += kick;
+    }
+    f.display();
+    b.collision (head1x + f.x, head1y + f.y);
+    if (kickactivate1==true && theta1 >= PI/2) {
+      kick = backKick;
+    }
+    if (kickactivate1==true && theta1 <= 0) {
+      kick = forwardKick;
+    }
+    popMatrix();
+    pushMatrix();
+    translate(head2x, head2y);
+    fill(255);
+    ellipse(0, 0, headSize, headSize);
+    if (kickactivate2==true) {
+      rotate(-theta2);
+      theta2 += kick2;
+    }
+    f.display();
+    b.collision (head2x + f.x, head2y + f.y);
+    rotate(-theta2);
+    if (kickactivate2==true && theta2 >= PI/2) {
+      kick2 = backKick2;
+    }
+    if (kickactivate2==true && theta2 <= 0) {
+      kick2 = forwardKick2;
+    }
   }
-  if (kickactivate2==true && theta2 <= 0) {
-    kick2 = forwardKick2;
-  }
-  popMatrix();
 }
 
 void keyPressed() {
