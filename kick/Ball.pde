@@ -5,6 +5,8 @@ class Ball {
   float velY;
   int diam;
   float gravity;
+  int scoreL;
+  int scoreR;
 
   Ball() {
     x = width/2;
@@ -13,6 +15,8 @@ class Ball {
     velX = random(-5, 5);
     velY = random(-5, 5);
     gravity = 1;
+    scoreL = 0;
+    scoreR = 0;
   }
   void display() {
     //fill(0, 0, 255);
@@ -33,6 +37,16 @@ class Ball {
     }
     if (y>=  height) {
       y = height - diam/2;
+    }
+    fill(255);
+    textSize(75);
+    text(scoreL, 470, 225);
+    if (x + diam <= 200) {
+      scoreL = scoreL + 1;
+    }
+    text(scoreR, 710, 225);
+    if (x + diam >= 1150) {
+      scoreR = scoreR + 1;
     }
   }
 }
