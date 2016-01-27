@@ -17,6 +17,7 @@ float head2x = 200;
 float player2move = 10;
 float player1jump = 30;
 float player2jump = 30;
+int gameMode;
 
 boolean kickactivate1 = false;
 boolean kickactivate2 = false;
@@ -26,6 +27,7 @@ feet f;
 
 void setup() {
   size(1280, 720);
+  gameMode = 0;
   rectMode(CENTER);
 
   b= new Ball();
