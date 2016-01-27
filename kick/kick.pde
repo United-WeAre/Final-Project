@@ -22,6 +22,7 @@ Ball b = new Ball();
 void setup() {
   size(1280, 720);        //creates size of canvas
   rectMode(CENTER);
+  b = new Ball();
   //Ball2 = loadImage("Ball2.jpg");
 }
 
@@ -29,8 +30,8 @@ void draw() {
   b.display();
   b.move();
   println("kick1: " + kickactivate1);
-  background(150);
-  fill(255, 0, 0);
+  //background(150);
+  //fill(255, 0, 0);
   rect(width/2, height/2, width, height);
   pushMatrix();
   translate(head1x, head1y);

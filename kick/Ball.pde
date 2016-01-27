@@ -1,5 +1,10 @@
 class Ball {
-  float x, y, velX, velY, diam, gravity;
+  float x;
+  float y;
+  float velX;
+  float velY;
+  int diam;
+  float gravity;
 
   Ball() {
     x = width/2;
@@ -10,8 +15,8 @@ class Ball {
     gravity = 1;
   }
   void display() {
-    fill(0,0,255);
-    ellipse(diam,diam,x,y);
+    //fill(0, 0, 255);
+    ellipse(x, y, diam, diam);
   }
   void move() {
     x += velX;
