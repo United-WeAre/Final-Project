@@ -17,22 +17,25 @@ float head2x = 150;
 float player2move = 6;
 boolean kickactivate1 = false;
 boolean kickactivate2 = false;
+PImage arena;
 //PImage Ball2 = loadImage("Ball2.jpg");
-Ball b = new Ball();
+Ball b;
 void setup() {
   size(1280, 720);        //creates size of canvas
   rectMode(CENTER);
   b = new Ball();
+  arena =loadImage("PRACTICE MIAMI ARENA.jpg"); 
   //Ball2 = loadImage("Ball2.jpg");
 }
 
 void draw() {
+  background(arena);
   b.display();
   b.move();
   println("kick1: " + kickactivate1);
   //background(150);
   //fill(255, 0, 0);
-  rect(width/2, height/2, width, height);
+
   pushMatrix();
   translate(head1x, head1y);
   fill(255);
