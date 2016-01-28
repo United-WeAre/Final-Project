@@ -76,19 +76,19 @@ void draw() {
   } else if (gameMode == 1) {
     miamiArena.resize(width, height);
     background(miamiArena);
-    image(khaled, head1x, head1y);
+    image(khaled, head1x-100, head1y);
   } else if (gameMode == 2) {
     miamiArena.resize(width, height);
     background(miamiArena);
-    image(kanye, head1x, head1y);
+    image(kanye, head1x-100, head1y);
   } else if (gameMode == 3) {
     miamiArena.resize(width, height);
     background(miamiArena);
-    image(cent, head1x, head1y);
+    image(cent, head1x-100, head1y);
   } else if (gameMode == 4) {
     miamiArena.resize(width, height);
     background(miamiArena);
-    image(drake, head1x, head1y);
+    image(drake, head1x-100, head1y);
   }
   if (gameMode >=1) {
     b.display();
