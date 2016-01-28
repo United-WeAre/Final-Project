@@ -9,7 +9,7 @@ class Ball {
   int scoreL;
   int scoreR;
   PImage bola;
-  // initializes variables
+
   Ball() {
     x = width/2;
     y = height/2;
@@ -20,17 +20,16 @@ class Ball {
     scoreL = 0;
     scoreR = 0;
     bola = loadImage("BALL_-_FIFA.png");
-    //gives values to variables
   }
 
   void display() {
-    ellipse(x, y, diam, diam); // draws an ellipse
-    image(bola, x-105, y-105, diam+175, diam+175); //puts the image in
+    ellipse(x, y, diam, diam);
+    image(bola, x-105, y-105, diam+175, diam+175);
   }
   void move() {
-    x += velX; //adds velocity
-    velY= velY + gravity; // adds gravity
-    y += velY; //adds velocity
+    x += velX;
+    velY= velY + gravity;
+    y += velY;
 
     if (x+ diam >= width) {
       velX = -abs(velX);    //if the ball hits the right wall, assign x velocity the negative version of itself
@@ -47,29 +46,30 @@ class Ball {
     fill(255);
     textSize(75);
     text(scoreR, 470, 225);
-    if (x + diam <= 200) { // if the ball goes past this
-      scoreL = scoreL + 1; // add one to score
+    if (x + diam <= 200) {
+      scoreL = scoreL + 1;
       x = width/2;
       y = height/2;
       velX = random(-5, 5);
       velY = random(-5, 5);
       gravity = 1;
-      // resets it
     }
     text(scoreL, 710, 225);
-    if (x + diam >= 1150) {  // if the ball goes past this
-      scoreR = scoreR + 1; // add one to score
+    if (x + diam >= 1150) {
+      scoreR = scoreR + 1;
       x = width/2;
       y = height/2;
       velX = random(-5, 5);
       velY = random(-5, 5);
       gravity = 1;
-      // resets it
     }
+    //if (y + diam == 600 && x + diam == 200) {
+    //  velX = -abs(velX);
+    //}
   }
   void collision (float sx, float sy) {
 
-    if (dist(x, y, sx, sy) <=40) { // if it is less than 40 pixels away
+    if (dist(x, y, sx, sy) <=40) {
       println("collide in frame " + frameCount);
       velX += random (1, 4); 
       velX=-velX;

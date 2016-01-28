@@ -25,8 +25,8 @@ float player1move = 20; //how much player moves by
 float head2y = 600; // player two head y pos
 float head2x = 200; // player one head x pos
 float player2move = 20; //how much player moves by
-float player1jump = 35; // sets jump height
-float player2jump = 35; // sets jump height
+float player1jump = 75; // sets jump height
+float player2jump = 75; // sets jump height
 int gameMode; //sets gamemode as an integer
 boolean kickactivate1 = false; // sets the boolean to false
 boolean kickactivate2 = false;  // sets the boolean to false
@@ -45,10 +45,10 @@ void setup() {
   b= new Ball(); //sets class
   f = new feet(); //sets class
   miamiArena = loadImage("miamiArena.jpg"); //loads image and sets the variable
-  drake = loadImage("drake.jpg"); //loads image and sets the variable
-  cent = loadImage("50cent.jpg"); //loads image and sets the variable
-  khaled = loadImage("khaled.jpg"); //loads image and sets the variable
-  kanye = loadImage("kanye.jpg"); //loads image and sets the variable
+  drake = loadImage("DRAKE.png"); //loads image and sets the variable
+  cent = loadImage("50_CENT.png"); //loads image and sets the variable
+  khaled = loadImage("DJ_KHALED.png"); //loads image and sets the variable
+  kanye = loadImage("KANYE.png"); //loads image and sets the variable
   minim = new Minim(this); 
   player = minim.loadFile("Yeah.mp3", 2048);
   player.play(); // This makes the music play
@@ -120,7 +120,7 @@ void draw() {
     popMatrix(); // stop matrix
     pushMatrix();
     translate(head2x, head2y);
-    fill(255);
+    fill(100,100,255);
     ellipse(0, 0, headSize, headSize);
     if (kickactivate2==true) {
       rotate(-theta2);
@@ -138,16 +138,16 @@ void draw() {
     popMatrix();
   }
   if (gameMode == 1) {
-    image(khaled, head1x-43, head1y-110);
+    image(khaled, head1x-101, head1y-108);
   }
   if (gameMode == 2) {
-    image(kanye, head1x-44, head1y-100);
+    image(kanye, head1x-101, head1y-102);
   }
   if (gameMode == 3) {
-    image(cent, head1x-53, head1y-110);
+    image(cent, head1x-106, head1y-100);
   }
   if (gameMode == 4) {
-    image(drake, head1x-41, head1y-110);
+    image(drake, head1x-99, head1y-100);
   }
 }
 // same as above just for other player 
