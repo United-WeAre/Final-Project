@@ -1,3 +1,13 @@
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
+AudioPlayer player;
+Minim minim;//audio context
+
 int headSize = 70;
 int shoeW = 30;
 int shoeH = 80;
@@ -18,7 +28,6 @@ float player2move = 20;
 float player1jump = 35;
 float player2jump = 35;
 int gameMode;
-
 boolean kickactivate1 = false;
 boolean kickactivate2 = false;
 PImage miamiArena;
@@ -26,7 +35,6 @@ PImage drake;
 PImage cent;
 PImage khaled;
 PImage kanye;
-
 Ball b;
 feet f;
 
@@ -34,7 +42,6 @@ void setup() {
   size(1280, 720);
   gameMode = 0;
   rectMode(CENTER);
-
   b= new Ball();
   f = new feet();
   miamiArena = loadImage("miamiArena.jpg");
@@ -42,9 +49,13 @@ void setup() {
   cent = loadImage("50cent.jpg");
   khaled = loadImage("khaled.jpg");
   kanye = loadImage("kanye.jpg");
+  minim = new Minim(this);
+  player = minim.loadFile("Yeah.mp3", 2048);
+  player.play();
 }
 
 void draw() {
+
   if (gameMode == 0) {
     PImage WorldCupScreen;
     WorldCupScreen = loadImage("Start Screen.jpg");
