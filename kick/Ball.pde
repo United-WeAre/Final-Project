@@ -61,19 +61,15 @@ class Ball {
       velY = random(-5, 5);
       gravity = 1;
     }
-    //if (y + diam == 600 && x + diam == 200) {
-    //  velX = -abs(velX);
-    //}
   }
   void collision (float sx, float sy) {
 
     if (dist(x, y, sx, sy) <=40) {
       println("collide in frame " + frameCount);
-      velX += random (1,4); 
+      velX += random (1, 4); 
       velX=-velX;
-      velY += random (1,4); 
+      velY += random (1, 4); 
       velY =- abs(velY);
-      
     }
   }
 }

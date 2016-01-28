@@ -18,7 +18,6 @@ float player2move = 20;
 float player1jump = 35;
 float player2jump = 35;
 int gameMode;
-
 boolean kickactivate1 = false;
 boolean kickactivate2 = false;
 PImage miamiArena;
@@ -26,7 +25,6 @@ PImage drake;
 PImage cent;
 PImage khaled;
 PImage kanye;
-
 Ball b;
 feet f;
 
@@ -34,7 +32,6 @@ void setup() {
   size(1280, 720);
   gameMode = 0;
   rectMode(CENTER);
-
   b= new Ball();
   f = new feet();
   miamiArena = loadImage("miamiArena.jpg");
@@ -76,26 +73,23 @@ void draw() {
   } else if (gameMode == 1) {
     miamiArena.resize(width, height);
     background(miamiArena);
-    image(khaled, head1x, head1y);
+    image(khaled, head1x-100, head1y);
   } else if (gameMode == 2) {
     miamiArena.resize(width, height);
     background(miamiArena);
-    image(kanye, head1x, head1y);
+    image(kanye, head1x-100, head1y);
   } else if (gameMode == 3) {
     miamiArena.resize(width, height);
     background(miamiArena);
-    image(cent, head1x, head1y);
+    image(cent, head1x-100, head1y);
   } else if (gameMode == 4) {
     miamiArena.resize(width, height);
     background(miamiArena);
-    image(drake, head1x, head1y);
+    image(drake, head1x-100, head1y);
   }
   if (gameMode >=1) {
     b.display();
     b.move();
-
-    //println("kick1: " + kickactivate1);
-
     pushMatrix();
     translate(head1x, head1y);
     fill(255);
