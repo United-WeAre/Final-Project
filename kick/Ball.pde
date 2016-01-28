@@ -8,7 +8,7 @@ class Ball {
   float gravity;
   int scoreL;
   int scoreR;
-
+  PImage bola;
 
   Ball() {
     x = width/2;
@@ -19,10 +19,12 @@ class Ball {
     gravity = 1;
     scoreL = 0;
     scoreR = 0;
+    bola = loadImage("bola.jpg");
   }
+
   void display() {
-    //fill(0, 0, 255);
     ellipse(x, y, diam, diam);
+    image(bola, x-19, y-20, diam+7, diam+7);
   }
   void move() {
     x += velX;
@@ -69,11 +71,10 @@ class Ball {
 
     if (dist(x, y, sx, sy) <=40) {
       println("collide in frame " + frameCount);
-      velX += random (1,4); 
+      velX += random (1, 4); 
       velX=-velX;
-      velY += random (1,4); 
+      velY += random (1, 4); 
       velY =- abs(velY);
-      
     }
   }
 }

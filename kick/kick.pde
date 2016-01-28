@@ -76,25 +76,19 @@ void draw() {
   } else if (gameMode == 1) {
     miamiArena.resize(width, height);
     background(miamiArena);
-    image(khaled, head1x-100, head1y);
   } else if (gameMode == 2) {
     miamiArena.resize(width, height);
     background(miamiArena);
-    image(kanye, head1x-100, head1y);
   } else if (gameMode == 3) {
     miamiArena.resize(width, height);
     background(miamiArena);
-    image(cent, head1x-100, head1y);
   } else if (gameMode == 4) {
     miamiArena.resize(width, height);
     background(miamiArena);
-    image(drake, head1x-100, head1y);
   }
   if (gameMode >=1) {
     b.display();
     b.move();
-
-    //println("kick1: " + kickactivate1);
 
     pushMatrix();
     translate(head1x, head1y);
@@ -131,6 +125,18 @@ void draw() {
       kick2 = forwardKick2;
     }
     popMatrix();
+  }
+  if (gameMode == 1) {
+    image(khaled, head1x-43, head1y-110);
+  }
+  if (gameMode == 2) {
+    image(kanye, head1x-44, head1y-100);
+  }
+  if (gameMode == 3) {
+    image(cent, head1x-53, head1y-110);
+  }
+  if (gameMode == 4) {
+    image(drake, head1x-41, head1y-110);
   }
 }
 
