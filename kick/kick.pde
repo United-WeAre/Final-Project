@@ -8,116 +8,116 @@ import ddf.minim.ugens.*;
 AudioPlayer player;
 Minim minim;//audio context
 
-int headSize = 70;
-int shoeW = 30;
-int shoeH = 80;
-float theta1 = 0;
-float theta2 = 0;
-float forwardKick = radians(8);
-float backKick = -radians(6);
-float kick = forwardKick;
-float forwardKick2 = radians(8);
-float backKick2 = -radians(6);
-float kick2 = forwardKick2;
-float head1y = 600;
-float head1x = 1000;
-float player1move = 20;
-float head2y = 600;
-float head2x = 200;
-float player2move = 20;
-float player1jump = 35;
-float player2jump = 35;
-int gameMode;
-boolean kickactivate1 = false;
-boolean kickactivate2 = false;
-PImage miamiArena;
-PImage drake;
-PImage cent;
-PImage khaled;
-PImage kanye;
-Ball b;
-feet f;
+int headSize = 70; // sets headsize
+int shoeW = 30; // sets shoe width
+int shoeH = 80; // sets shoe height
+float theta1 = 0; // sets the theta of player one
+float theta2 = 0; // sets the theta of player two
+float forwardKick = radians(8); // tells it how to rotate
+float backKick = -radians(6);  // tells it how to rotate
+float kick = forwardKick; //kick is the same as forwardkick
+float forwardKick2 = radians(8); // tells it how to rotate
+float backKick2 = -radians(6);  // tells it how to rotate
+float kick2 = forwardKick2; //player2 kick is equal to forward kick
+float head1y = 600; // player one head y pos
+float head1x = 1000; // player one head x pos
+float player1move = 20; //how much player moves by
+float head2y = 600; // player two head y pos
+float head2x = 200; // player one head x pos
+float player2move = 20; //how much player moves by
+float player1jump = 35; // sets jump height
+float player2jump = 35; // sets jump height
+int gameMode; //sets gamemode as an integer
+boolean kickactivate1 = false; // sets the boolean to false
+boolean kickactivate2 = false;  // sets the boolean to false
+PImage miamiArena; //calls in a PImage
+PImage drake; //calls in a PImage
+PImage cent; //calls in a PImage
+PImage khaled; //calls in a PImage
+PImage kanye; //calls in a PImage
+Ball b; //sets class variable name
+feet f; //sets class variable name
 
 void setup() {
-  size(1280, 720);
-  gameMode = 0;
-  rectMode(CENTER);
-  b= new Ball();
-  f = new feet();
-  miamiArena = loadImage("miamiArena.jpg");
-  drake = loadImage("drake.jpg");
-  cent = loadImage("50cent.jpg");
-  khaled = loadImage("khaled.jpg");
-  kanye = loadImage("kanye.jpg");
-  minim = new Minim(this);
+  size(1280, 720); // sets size of canvas
+  gameMode = 0; // sets gamemode value
+  rectMode(CENTER); // how to draw the rectangle
+  b= new Ball(); //sets class
+  f = new feet(); //sets class
+  miamiArena = loadImage("miamiArena.jpg"); //loads image and sets the variable
+  drake = loadImage("drake.jpg"); //loads image and sets the variable
+  cent = loadImage("50cent.jpg"); //loads image and sets the variable
+  khaled = loadImage("khaled.jpg"); //loads image and sets the variable
+  kanye = loadImage("kanye.jpg"); //loads image and sets the variable
+  minim = new Minim(this); 
   player = minim.loadFile("Yeah.mp3", 2048);
-  player.play();
+  player.play(); // This makes the music play
 }
 
 void draw() {
 
-  if (gameMode == 0) {
-    PImage WorldCupScreen;
-    WorldCupScreen = loadImage("Start Screen.jpg");
-    background(0);
-    image(WorldCupScreen, 0, 0);
-    if (keyPressed) {
-      if (key == 'y') {
-        gameMode = 1;
+  if (gameMode == 0) { // if the gamemode is 0
+    PImage WorldCupScreen; //calls PImage
+    WorldCupScreen = loadImage("Start Screen.jpg"); //loads the image
+    background(0); // sets backgrounf to 0
+    image(WorldCupScreen, 0, 0); // draws the image
+    if (keyPressed) { // if a key is pressed
+      if (key == 'y') { // if y is pressed
+        gameMode = 1; // change value to one
       }
     }
 
-    if (keyPressed) {
-      if (key == 'u') {
-        gameMode = 2;
+    if (keyPressed) {  // if a key is pressed
+      if (key == 'u') { // if u is pressed
+        gameMode = 2; // change value to two
       }
     }
 
-    if (keyPressed) {
-      if (key == 'r') {
-        gameMode = 3;
+    if (keyPressed) { // if a key is pressed
+      if (key == 'r') { // if r is pressed
+        gameMode = 3; // change value to 3
       }
     }
 
-    if (keyPressed) {
-      if (key == 't') {
-        gameMode = 4;
+    if (keyPressed) { // if a key is pressed
+      if (key == 't') { // if t is pressed
+        gameMode = 4; // change value to 4
       }
     }
-  } else if (gameMode == 1) {
-    miamiArena.resize(width, height);
-    background(miamiArena);
-  } else if (gameMode == 2) {
-    miamiArena.resize(width, height);
-    background(miamiArena);
-  } else if (gameMode == 3) {
-    miamiArena.resize(width, height);
-    background(miamiArena);
-  } else if (gameMode == 4) {
-    miamiArena.resize(width, height);
-    background(miamiArena);
+  } else if (gameMode == 1) { //and if the game mode is one
+    miamiArena.resize(width, height); //resizes the image to width and height
+    background(miamiArena); // sets the background as the image
+  } else if (gameMode == 2) {  //and if the game mode is two
+    miamiArena.resize(width, height); //resizes the image to width and height
+    background(miamiArena); // sets the background as the image
+  } else if (gameMode == 3) {  //and if the game mode is three
+    miamiArena.resize(width, height); //resizes the image to width and height
+    background(miamiArena); // sets the background as the image
+  } else if (gameMode == 4) {  //and if the game mode is four
+    miamiArena.resize(width, height); //resizes the image to width and height
+    background(miamiArena); // sets the background as the image
   }
-  if (gameMode >=1) {
+  if (gameMode >=1) { // if the gamemode is greater than one 
     b.display();
-    b.move();
+    b.move(); // run these constructors
 
     pushMatrix();
-    translate(head1x, head1y);
-    fill(255);
-    ellipse(0, 0, headSize, headSize);
-    if (kickactivate1==true) {
-      rotate(theta1);
-      theta1 += kick;
+    translate(head1x, head1y); //change the origin to here
+    fill(255); // set the fill
+    ellipse(0, 0, headSize, headSize); //draws ellipse
+    if (kickactivate1==true) { // if its is true
+      rotate(theta1); // rotate the the first player's theta 
+      theta1 += kick; // add kick to theta
     }
-    f.display();
-    b.collision (head1x + f.x, head1y + f.y);
-    if (kickactivate1==true && theta1 >= PI/2) {
-      kick = backKick;
+    f.display(); // run this
+    b.collision (head1x + f.x, head1y + f.y); // if it is in contact with
+    if (kickactivate1==true && theta1 >= PI/2) { // if they are both true
+      kick = backKick; // kick is equal to backkick
     }
-    if (kickactivate1==true && theta1 <= 0) {
-      kick = forwardKick;
+    if (kickactivate1==true && theta1 <= 0) { // if these are true
+      kick = forwardKick; // kick is equal to forward kick
     }
-    popMatrix();
+    popMatrix(); // stop matrix
     pushMatrix();
     translate(head2x, head2y);
     fill(255);
@@ -150,51 +150,51 @@ void draw() {
     image(drake, head1x-41, head1y-110);
   }
 }
-
-void keyPressed() {
-  if (keyCode == LEFT) {
-    head1x -= player1move;
-  } else if (keyCode == 39) {
-    head1x += player1move;
+// same as above just for other player 
+void keyPressed() { // if this key is pressed
+  if (keyCode == LEFT) { // if left key pressed
+    head1x -= player1move; // subrtract from pos
+  } else if (keyCode == 39) { //or if this key pressed
+    head1x += player1move; // add to player pos
   }
-  if (keyCode == 65) {
-    head2x -= player1move;
-  } else if (keyCode == 68) {
-    head2x += player1move;
+  if (keyCode == 65) { // if this key is pressed 
+    head2x -= player1move; // subrtract from pos
+  } else if (keyCode == 68) { //or if this key pressed
+    head2x += player1move; // add to player pos
   }
-  if (keyCode == 32) {
-    println("activated kick1 in frame " + frameCount);
-    kickactivate1=true;
+  if (keyCode == 32) { // if this key is pressed 
+    println("activated kick1 in frame " + frameCount); //print this line
+    kickactivate1=true; //makes it true
   }
-  if (key == 'l') {
-    println("activated kick1 in frame " + frameCount);
-    kickactivate2=true;
+  if (key == 'l') { // if this key is pressed 
+    println("activated kick1 in frame " + frameCount); //print this line
+    kickactivate2=true; //makes it true
   }
-  if (keyCode == UP) {
-    head1y -= player1jump;
+  if (keyCode == UP) {  // if this key is pressed 
+    head1y -= player1jump; //subtracts from player pos
   }
-  if (key == 'w') {
-    head2y -= player2jump;
+  if (key == 'w') {  // if this key is pressed 
+    head2y -= player2jump; //subtracts from player pos
   }
-  head1x = constrain(head1x, 220, width-220);
+  head1x = constrain(head1x, 220, width-220); 
   head2x = constrain(head2x, 220, width-220);
   head1y = constrain(head1y, 500, 610);
-  head2y = constrain(head2y, 500, 610);
+  head2y = constrain(head2y, 500, 610); // consrains the variables to these values
 }
 
-void keyReleased () { 
-  if (keyCode == 32) {
-    kickactivate1=false;
-    theta1=0;
+void keyReleased () { // if key is released
+  if (keyCode == 32) { //if this key is pressed
+    kickactivate1=false; // make it false
+    theta1=0; // reset it to original 
   }
-  if (key == 'l') {
-    kickactivate2=false;
-    theta2=0;
+  if (key == 'l') { //if this key is released
+    kickactivate2=false;  // make it false
+    theta2=0; //reset it back to original 
   }
-  if (keyCode == UP) {
-    head1y = 600;
+  if (keyCode == UP) {  //if this key is released
+    head1y = 600; //reset to pos
   }
-  if (key == 'w') {
-    head2y = 600;
+  if (key == 'w') { //if this key is released
+    head2y = 600; //reset to pos
   }
 }
