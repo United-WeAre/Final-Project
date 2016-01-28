@@ -120,7 +120,7 @@ void draw() {
     popMatrix();
     pushMatrix();
     translate(head2x, head2y);
-    fill(255);
+    fill(100,100,255);
     ellipse(0, 0, headSize, headSize);
     if (kickactivate2==true) {
       rotate(-theta2);
