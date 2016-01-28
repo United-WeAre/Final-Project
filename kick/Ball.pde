@@ -19,12 +19,12 @@ class Ball {
     gravity = 1;
     scoreL = 0;
     scoreR = 0;
-    bola = loadImage("bola.jpg");
+    bola = loadImage("BALL_-_FIFA.png");
   }
 
   void display() {
     ellipse(x, y, diam, diam);
-    image(bola, x-19, y-20, diam+7, diam+7);
+    image(bola, x-105, y-105, diam+175, diam+175);
   }
   void move() {
     x += velX;
@@ -45,7 +45,7 @@ class Ball {
     //The following code controls the left and right player scores
     fill(255);
     textSize(75);
-    text(scoreL, 470, 225);
+    text(scoreR, 470, 225);
     if (x + diam <= 200) {
       scoreL = scoreL + 1;
       x = width/2;
@@ -54,7 +54,7 @@ class Ball {
       velY = random(-5, 5);
       gravity = 1;
     }
-    text(scoreR, 710, 225);
+    text(scoreL, 710, 225);
     if (x + diam >= 1150) {
       scoreR = scoreR + 1;
       x = width/2;
