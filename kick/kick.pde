@@ -11,17 +11,22 @@ float backKick2 = -radians(6);
 float kick2 = forwardKick2;
 float head1y = 600;
 float head1x = 1000;
-float player1move = 10;
+float player1move = 20;
 float head2y = 600;
 float head2x = 200;
-float player2move = 10;
-float player1jump = 30;
-float player2jump = 30;
+float player2move = 20;
+float player1jump = 35;
+float player2jump = 35;
 int gameMode;
 
 boolean kickactivate1 = false;
 boolean kickactivate2 = false;
 PImage miamiArena;
+PImage drake;
+PImage cent;
+PImage khaled;
+PImage kanye;
+
 Ball b;
 feet f;
 
@@ -33,7 +38,10 @@ void setup() {
   b= new Ball();
   f = new feet();
   miamiArena = loadImage("miamiArena.jpg");
-  //miamiArena.resize(width, height);
+  drake = loadImage("drake.jpg");
+  cent = loadImage("50cent.jpg");
+  khaled = loadImage("khaled.jpg");
+  kanye = loadImage("kanye.jpg");
 }
 
 void draw() {
@@ -68,15 +76,19 @@ void draw() {
   } else if (gameMode == 1) {
     miamiArena.resize(width, height);
     background(miamiArena);
+    image(khaled, head1x, head1y);
   } else if (gameMode == 2) {
     miamiArena.resize(width, height);
     background(miamiArena);
+    image(kanye, head1x, head1y);
   } else if (gameMode == 3) {
     miamiArena.resize(width, height);
     background(miamiArena);
+    image(cent, head1x, head1y);
   } else if (gameMode == 4) {
     miamiArena.resize(width, height);
     background(miamiArena);
+    image(drake, head1x, head1y);
   }
   if (gameMode >=1) {
     b.display();
